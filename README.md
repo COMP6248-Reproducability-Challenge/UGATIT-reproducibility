@@ -17,6 +17,8 @@ The team of the coursework train the model on Google Colab Pro using the light v
 
 If you want to use the full version of the code instead of the light version, use good GPU. The team successfully run it on a Titan RTX with 24G memory. However, considering about the cost to use a better GPU, the team chooses to run the light version of the code on the Google Colab Pro which is claimed to yield similar results compared with the full version code.
 
+Only the results of the full version is well-structured. The results of other variations of the model is not well-structrued but are all in one same folder "img", since it is difficult to organize things in Github.
+
 ### The code for the ablation study for the anxiliary classifiers
 As shown in the original essay, the auxiliary classifiers are applied on the encoder feature map after the encoder to calculate the weight. In the “networks.py” file, the “forward” functions in the “ResnetGenerator” class and the “Discriminator” class build the whole process of the generator and the discriminator, respectively. To delete the use of the auxiliary classifier, one can simply put the output of the encoder as the input of a fully connected layer before the decoder. This can be solved by commenting on the following code since this piece of code changes the variable “x” using the result of the auxiliary classifiers. If the user still wants the heatmap as one of the outputs of this function, he can replace the “x” in this piece of code by another variable name instead of commenting. This method applies both on the auxiliary classifier in the generator and the discriminator.
 
